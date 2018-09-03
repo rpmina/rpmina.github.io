@@ -1,54 +1,25 @@
 ---
+# Front matter comment to ensure Jekyll properly reads file.
 ---
-// CSS Style Guide: http://codeguide.co/#css
 
+/*
+  Site variables
+*/
 
+$base-font-family: 'Roboto', sans-serif;
 
-$scheme    : '{{ site.scheme | default: Muse }}';
-$variables : base $scheme custom;
-$mixins    : base $scheme custom;
+$body-font-family: 'Roboto', sans-serif;
 
+$code-font-family: "Source Code Pro", monospace;
 
-{% include _helper/config_map.html %}
-$jekyll-config-map : {{ config_map }};
+$brand-color: black;
 
-@function jekyll-config($key) {
-  @return map-get($jekyll-config-map, $key);
-}
+$container-width: 1100px;
 
-// Variables Layer
-// --------------------------------------------------
-@import "_variables/base";
-@import "_variables/{{ site.scheme | default: Muse }}";
-@import "_variables/custom";
+$tablet-width: 600px;
 
-// Mixins Layer
-// --------------------------------------------------
-@import "_mixins/base";
-@import "_mixins/{{ site.scheme | default: Muse }}";
-@import "_mixins/custom";
+$phone-width: 480px;
 
+$header-thickness: 56px;
 
-
-// Common Layer
-// --------------------------------------------------
-
-// Scaffolding
-@import "_common/scaffolding/scaffolding";
-
-// Layout
-@import "_common/outline/outline";
-
-// Components
-@import "_common/components/components";
-
-
-// Schemes Layer
-// --------------------------------------------------
-@import "_schemes/{{ site.scheme | default: Muse }}/index";
-
-
-
-// Custom Layer
-// --------------------------------------------------
-@import "_custom/custom";
+@import "_sass/-sections-dir";
